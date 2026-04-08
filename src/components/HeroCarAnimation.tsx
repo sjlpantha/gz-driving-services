@@ -7,9 +7,8 @@ export default function HeroCarAnimation() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
 
-  // Car moves from left (-60px) to right (+60px) as user scrolls 0→400px
-  const x = useTransform(scrollY, [0, 400], [-60, 60]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0.6]);
+  const x = useTransform(scrollY, [0, 400], [-50, 50]);
+  const opacity = useTransform(scrollY, [0, 350], [1, 0.6]);
 
   return (
     <div
@@ -17,132 +16,175 @@ export default function HeroCarAnimation() {
       className="relative w-full h-full min-h-[320px] flex items-center justify-center overflow-hidden"
       aria-hidden="true"
     >
-      {/* Warm grid background */}
+      {/* Grid background */}
       <div
         className="absolute inset-0 rounded-2xl"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(176,28,28,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(176,28,28,0.06) 1px, transparent 1px)
+            linear-gradient(rgba(185,28,28,0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(185,28,28,0.07) 1px, transparent 1px)
           `,
-          backgroundSize: '40px 40px',
+          backgroundSize: '36px 36px',
           backgroundColor: '#FEF2F2',
         }}
       />
 
-      {/* Road line */}
-      <div className="absolute bottom-12 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#E8E8E8] to-transparent" />
-      <div className="absolute bottom-10 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#FECACA] to-transparent" />
+      {/* Road */}
+      <div className="absolute bottom-10 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-[#D1D5DB] to-transparent rounded-full" />
+      <div className="absolute bottom-8 left-16 right-16 h-0.5 bg-gradient-to-r from-transparent via-[#E5E7EB] to-transparent rounded-full" />
 
       {/* Animated car */}
-      <motion.div
-        style={{ x, opacity }}
-        className="relative z-10 drop-shadow-2xl"
-      >
-        <CarSVG />
+      <motion.div style={{ x, opacity }} className="relative z-10">
+        <ModernCarSVG />
       </motion.div>
 
-      {/* L plate badge */}
-      <div className="absolute top-6 right-6 w-10 h-10 bg-white border-2 border-[#B91C1C] rounded-lg flex items-center justify-center shadow-md">
-        <span className="text-[#B91C1C] font-black text-lg leading-none">L</span>
+      {/* L plate */}
+      <div className="absolute top-5 right-5 w-9 h-9 bg-white border-[3px] border-[#B91C1C] rounded-md flex items-center justify-center shadow-md">
+        <span className="text-[#B91C1C] font-black text-base leading-none">L</span>
       </div>
     </div>
   );
 }
 
-function CarSVG() {
+function ModernCarSVG() {
   return (
     <svg
-      width="340"
-      height="160"
-      viewBox="0 0 340 160"
+      viewBox="0 0 500 200"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full max-w-[340px]"
+      className="w-full max-w-[460px] drop-shadow-xl"
     >
-      {/* Shadow */}
-      <ellipse cx="170" cy="148" rx="130" ry="8" fill="#1a1a1a" opacity="0.12" />
+      {/* ── Shadow ── */}
+      <ellipse cx="250" cy="186" rx="185" ry="10" fill="#1a1a1a" opacity="0.10" />
 
-      {/* Body */}
+      {/* ── Body lower (sill) ── */}
+      <rect x="55" y="130" width="390" height="28" rx="6" fill="#991B1B" />
+
+      {/* ── Main body ── */}
       <path
-        d="M30 100 C30 100 50 100 60 98 L80 55 C85 45 95 38 120 36 L210 34 C235 34 250 42 262 55 L278 88 C290 90 305 95 310 100 L310 118 C310 122 306 126 302 126 L38 126 C34 126 30 122 30 118 Z"
+        d="
+          M 70 130
+          L 60 105
+          L 72 105
+          L 95 62
+          C 102 50 115 42 132 40
+          L 310 38
+          C 338 38 358 48 372 62
+          L 408 105
+          L 440 105
+          L 440 130
+          Z
+        "
         fill="#B91C1C"
       />
 
-      {/* Roof highlight */}
+      {/* ── Roof (darker) ── */}
       <path
-        d="M90 55 C95 45 105 40 125 38 L205 36 C228 36 242 44 252 55 L88 56 Z"
-        fill="#991B1B"
+        d="M 110 105 L 128 63 C 134 52 146 44 160 42 L 308 40 C 332 40 350 50 362 63 L 390 105 Z"
+        fill="#9B1616"
       />
 
-      {/* Windscreen */}
+      {/* ── Windscreen ── */}
       <path
-        d="M100 58 C105 48 115 42 130 40 L205 38 C225 38 238 46 248 58 Z"
+        d="M 123 103 L 140 65 C 145 55 155 48 168 46 L 255 45 L 255 103 Z"
         fill="#BFDBFE"
-        opacity="0.85"
+        opacity="0.88"
       />
+      {/* Windscreen glare */}
+      <path d="M 133 95 L 148 62 C 152 54 160 49 170 47 L 185 47 L 165 95 Z" fill="white" opacity="0.18" />
 
-      {/* Side windows */}
-      <rect x="145" y="42" width="50" height="36" rx="4" fill="#BFDBFE" opacity="0.85" />
-      <rect x="100" y="44" width="38" height="32" rx="4" fill="#BFDBFE" opacity="0.85" />
+      {/* ── Rear window ── */}
+      <path
+        d="M 260 45 L 305 45 C 328 45 345 53 356 65 L 378 103 L 260 103 Z"
+        fill="#BFDBFE"
+        opacity="0.88"
+      />
+      <path d="M 370 95 L 352 63 C 347 55 340 49 330 47 L 310 46 L 350 95 Z" fill="white" opacity="0.18" />
 
-      {/* Door lines */}
-      <line x1="143" y1="50" x2="143" y2="105" stroke="#991B1B" strokeWidth="1.5" />
-      <line x1="200" y1="50" x2="200" y2="105" stroke="#991B1B" strokeWidth="1.5" />
+      {/* ── Side window divider ── */}
+      <rect x="252" y="45" width="4" height="58" rx="2" fill="#9B1616" />
 
-      {/* GZ DRIVING text on body */}
+      {/* ── Door line ── */}
+      <line x1="255" y1="110" x2="255" y2="138" stroke="#991B1B" strokeWidth="2" />
+
+      {/* ── GZ DRIVING text ── */}
       <text
-        x="155"
-        y="96"
+        x="250"
+        y="124"
         textAnchor="middle"
         fill="white"
-        fontSize="10"
+        fontSize="11"
         fontWeight="700"
         fontFamily="Inter, Arial, sans-serif"
-        letterSpacing="1"
-        opacity="0.9"
+        letterSpacing="2"
+        opacity="0.92"
       >
         GZ DRIVING
       </text>
 
-      {/* Front bumper detail */}
-      <rect x="280" y="102" width="28" height="18" rx="4" fill="#991B1B" />
-      <rect x="285" y="106" width="12" height="8" rx="2" fill="#FCD34D" opacity="0.9" />
+      {/* ── Front bumper ── */}
+      <path d="M 430 105 L 445 108 L 445 130 L 430 130 Z" fill="#7F1D1D" />
+      <rect x="432" y="110" width="14" height="7" rx="2" fill="#FCD34D" opacity="0.9" /> {/* headlight */}
+      <rect x="432" y="119" width="8" height="4" rx="1" fill="#FCA5A5" opacity="0.7" /> {/* DRL */}
 
-      {/* Rear bumper detail */}
-      <rect x="32" y="102" width="28" height="18" rx="4" fill="#991B1B" />
-      <rect x="35" y="106" width="10" height="8" rx="2" fill="#FCA5A5" opacity="0.9" />
+      {/* ── Rear bumper ── */}
+      <path d="M 70 105 L 55 108 L 55 130 L 70 130 Z" fill="#7F1D1D" />
+      <rect x="54" y="110" width="14" height="7" rx="2" fill="#FCA5A5" opacity="0.9" /> {/* tail light */}
+      <rect x="57" y="119" width="8" height="4" rx="1" fill="#F87171" opacity="0.7" />
 
-      {/* Front wheel arch + wheel */}
-      <ellipse cx="255" cy="128" rx="22" ry="22" fill="#1a1a1a" />
-      <ellipse cx="255" cy="128" rx="16" ry="16" fill="#374151" />
-      <ellipse cx="255" cy="128" rx="8" ry="8" fill="#6B7280" />
-      <ellipse cx="255" cy="128" rx="3" ry="3" fill="#9CA3AF" />
+      {/* ── Door handle front ── */}
+      <rect x="305" y="116" width="22" height="5" rx="2.5" fill="#7F1D1D" />
+      {/* ── Door handle rear ── */}
+      <rect x="173" y="116" width="22" height="5" rx="2.5" fill="#7F1D1D" />
 
-      {/* Rear wheel arch + wheel */}
-      <ellipse cx="90" cy="128" rx="22" ry="22" fill="#1a1a1a" />
-      <ellipse cx="90" cy="128" rx="16" ry="16" fill="#374151" />
-      <ellipse cx="90" cy="128" rx="8" ry="8" fill="#6B7280" />
-      <ellipse cx="90" cy="128" rx="3" ry="3" fill="#9CA3AF" />
+      {/* ── Side mirror ── */}
+      <path d="M 402 88 L 416 83 L 418 95 L 402 97 Z" fill="#7F1D1D" />
+      <rect x="404" y="86" width="10" height="8" rx="2" fill="#93C5FD" opacity="0.6" />
 
-      {/* Wheel spoke lines front */}
-      <line x1="255" y1="112" x2="255" y2="144" stroke="#9CA3AF" strokeWidth="1.5" />
-      <line x1="239" y1="128" x2="271" y2="128" stroke="#9CA3AF" strokeWidth="1.5" />
-      <line x1="244" y1="117" x2="266" y2="139" stroke="#9CA3AF" strokeWidth="1.5" />
-      <line x1="244" y1="139" x2="266" y2="117" stroke="#9CA3AF" strokeWidth="1.5" />
+      {/* ── Roof antenna ── */}
+      <line x1="330" y1="38" x2="333" y2="20" stroke="#991B1B" strokeWidth="2.5" strokeLinecap="round" />
+      <circle cx="333" cy="19" r="2.5" fill="#B91C1C" />
 
-      {/* Wheel spoke lines rear */}
-      <line x1="90" y1="112" x2="90" y2="144" stroke="#9CA3AF" strokeWidth="1.5" />
-      <line x1="74" y1="128" x2="106" y2="128" stroke="#9CA3AF" strokeWidth="1.5" />
-      <line x1="79" y1="117" x2="101" y2="139" stroke="#9CA3AF" strokeWidth="1.5" />
-      <line x1="79" y1="139" x2="101" y2="117" stroke="#9CA3AF" strokeWidth="1.5" />
+      {/* ── Front wheel ── */}
+      <circle cx="358" cy="158" r="32" fill="#111827" />
+      <circle cx="358" cy="158" r="24" fill="#1F2937" />
+      <circle cx="358" cy="158" r="13" fill="#374151" />
+      <circle cx="358" cy="158" r="5" fill="#6B7280" />
+      {/* spokes */}
+      {[0, 60, 120, 180, 240, 300].map((deg) => (
+        <line
+          key={deg}
+          x1={358 + 6 * Math.cos((deg * Math.PI) / 180)}
+          y1={158 + 6 * Math.sin((deg * Math.PI) / 180)}
+          x2={358 + 22 * Math.cos((deg * Math.PI) / 180)}
+          y2={158 + 22 * Math.sin((deg * Math.PI) / 180)}
+          stroke="#9CA3AF"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      ))}
 
-      {/* Side mirror */}
-      <path d="M274 76 L282 72 L285 80 L274 82 Z" fill="#991B1B" />
+      {/* ── Rear wheel ── */}
+      <circle cx="142" cy="158" r="32" fill="#111827" />
+      <circle cx="142" cy="158" r="24" fill="#1F2937" />
+      <circle cx="142" cy="158" r="13" fill="#374151" />
+      <circle cx="142" cy="158" r="5" fill="#6B7280" />
+      {[0, 60, 120, 180, 240, 300].map((deg) => (
+        <line
+          key={deg}
+          x1={142 + 6 * Math.cos((deg * Math.PI) / 180)}
+          y1={158 + 6 * Math.sin((deg * Math.PI) / 180)}
+          x2={142 + 22 * Math.cos((deg * Math.PI) / 180)}
+          y2={158 + 22 * Math.sin((deg * Math.PI) / 180)}
+          stroke="#9CA3AF"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      ))}
 
-      {/* Roof antenna */}
-      <line x1="190" y1="34" x2="190" y2="22" stroke="#991B1B" strokeWidth="2" />
-      <circle cx="190" cy="21" r="2" fill="#991B1B" />
+      {/* ── Tyre highlight ── */}
+      <path d="M 370 140 A 32 32 0 0 1 387 165" stroke="white" strokeWidth="2" opacity="0.12" strokeLinecap="round" />
+      <path d="M 154 140 A 32 32 0 0 1 171 165" stroke="white" strokeWidth="2" opacity="0.12" strokeLinecap="round" />
     </svg>
   );
 }

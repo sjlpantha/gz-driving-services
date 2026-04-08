@@ -5,7 +5,7 @@ import FaqAccordion from '@/components/FaqAccordion';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
-  description: `Common questions about driving lessons with ${COMPANY.name} in Orange, NSW. How many lessons, what car, pick-up, test day and more.`,
+  description: `Common questions about driving lessons with ${COMPANY.name} in Canberra, ACT. How many lessons, what car, pick-up, test day and more.`,
 };
 
 export default function FaqPage() {

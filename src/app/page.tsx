@@ -70,7 +70,7 @@ export default function HomePage() {
               >
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-[40px] border border-[#B91C1C]/20 bg-red-50 text-[#B91C1C] text-xs font-semibold">
                   <span className="w-2 h-2 rounded-full bg-[#B91C1C] animate-pulse" />
-                  Now accepting students — Orange NSW
+                  Now accepting students — Canberra ACT
                 </span>
               </motion.div>
 
@@ -93,7 +93,7 @@ export default function HomePage() {
                 transition={{ delay: 0.2, duration: 0.6 }}
                 className="text-gray-500 text-lg leading-relaxed max-w-lg"
               >
-                Professional driving instruction in Orange, NSW. Patient, experienced, and fully accredited — helping learners of all levels get road-ready.
+                Professional driving instruction in Canberra, ACT. Patient, experienced, and fully accredited — helping learners of all levels get road-ready.
               </motion.p>
 
               {/* Buttons */}
@@ -233,7 +233,7 @@ export default function HomePage() {
           </div>
 
           <p className="text-center text-gray-400 text-sm mt-8">
-            All prices include pick-up and drop-off within Orange. Packages never expire.{' '}
+            All prices include pick-up and drop-off within Canberra. Packages never expire.{' '}
             <Link href="/pricing" className="text-[#B91C1C] underline">Full pricing details →</Link>
           </p>
         </div>

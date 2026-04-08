@@ -4,7 +4,7 @@ import { SERVICES, COMPANY } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Driving Lesson Services',
-  description: `Learner lessons, licence test prep, refresher lessons and defensive driving in Orange, NSW. Professional instruction from ${COMPANY.name}. Call ${COMPANY.phone}.`,
+  description: `Learner lessons, licence test prep, refresher lessons and defensive driving in Canberra, ACT. Professional instruction from ${COMPANY.name}. Call ${COMPANY.phone}.`,
 };
 
 function CheckIcon() {
@@ -81,16 +81,26 @@ export default function ServicesPage() {
                   </Link>
                 </div>
 
-                {/* Visual card */}
+                {/* Visual card — image */}
                 <div
-                  className={`bg-white border border-[#E8E8E8] rounded-[14px] p-8 flex flex-col items-center justify-center min-h-[220px] ${
+                  className={`rounded-[14px] overflow-hidden min-h-[300px] lg:min-h-[360px] relative bg-gradient-to-br from-red-50 to-red-100 ${
                     i % 2 === 1 ? 'lg:col-start-1' : ''
                   }`}
                 >
-                  <div className="text-6xl mb-4">{service.icon}</div>
-                  <p className="text-center text-gray-400 text-sm">{service.shortDesc}</p>
-                  <div className="mt-4 px-3 py-1 rounded-full bg-red-50 text-[#B91C1C] text-xs font-medium">
-                    {service.duration}
+                  <img
+                    src={`/services/${service.id}.jpg`}
+                    alt={service.title}
+                    className="w-full h-full object-cover absolute inset-0"
+                  />
+                  {/* Overlay label */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl">{service.icon}</span>
+                      <span className="text-white font-bold text-lg">{service.title}</span>
+                    </div>
+                    <div className="mt-1 px-3 py-0.5 inline-block rounded-full bg-[#B91C1C] text-white text-xs font-medium">
+                      {service.duration}
+                    </div>
                   </div>
                 </div>
               </div>

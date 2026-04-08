@@ -5,7 +5,7 @@ export const COMPANY = {
   phoneClean: "0414356344",
   phoneIntl: "+61414356344",
   whatsapp: "https://wa.me/61414356344",
-  location: "Orange, NSW, Australia",
+  location: "Canberra, ACT, Australia",
   email: "info@gzdrivingservices.com.au",
   abn: "",
 };
@@ -182,7 +182,7 @@ export const FAQS = [
   },
   {
     question: "What areas do you cover?",
-    answer: "We are based in Orange, NSW and service Orange CBD, Bathurst Road, Summer Hill, Canobolas, Lucknow, Bloomfield, Spring Hill, and surrounding suburbs. Not sure if we cover your area? Just ask — we'll always try to accommodate.",
+    answer: "We are based in Canberra, ACT and service Belconnen, Gungahlin, Tuggeranong, Woden, Weston Creek, Inner North, Inner South, and surrounding suburbs. Not sure if we cover your area? Just ask — we'll always try to accommodate.",
   },
   {
     question: "What if I need to cancel or reschedule?",
@@ -199,10 +199,10 @@ export const WHY_GZ = [
   "Dual-control Mazda 3 for maximum safety",
   "Flexible scheduling including evenings and weekends",
   "Pick-up and drop-off included in every lesson",
-  "Structured lessons aligned with the NSW logbook requirements",
+  "Structured lessons aligned with the ACT logbook requirements",
 ];
 
 export const SERVICE_AREAS = [
-  "Orange CBD", "Spring Hill", "Canobolas", "Summer Hill", "Lucknow",
-  "Bloomfield", "Calare", "Huntley", "Shadforth", "Bowen",
+  "Belconnen", "Gungahlin", "Tuggeranong", "Woden", "Weston Creek",
+  "Inner North", "Inner South", "Bruce", "Civic", "Fyshwick",
 ];

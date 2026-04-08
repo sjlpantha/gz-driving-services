@@ -127,7 +127,7 @@ export default function ContactForm() {
                 value={form.suburb}
                 onChange={handleChange}
                 required
-                placeholder="e.g. Orange CBD"
+                placeholder="e.g. Belconnen"
                 className="px-4 py-3 rounded-xl border border-[#E8E8E8] focus:border-[#B91C1C] focus:outline-none text-sm text-[#1a1a1a] placeholder:text-gray-300 transition-colors"
               />
             </div>

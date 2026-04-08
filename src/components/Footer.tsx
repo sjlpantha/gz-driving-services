@@ -68,7 +68,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
           </p>
           <p className="text-gray-500 text-xs">
-            Licensed driving instructor · Orange, NSW · Australia
+            Licensed driving instructor · Canberra, ACT · Australia
           </p>
         </div>
       </div>

@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     default: `${COMPANY.name} | ${COMPANY.tagline}`,
     template: `%s | ${COMPANY.name}`,
   },
-  description: `Professional driving lessons in Orange, NSW. Patient, experienced instructor offering learner lessons, licence test prep, refresher lessons and defensive driving. Call ${COMPANY.phone}.`,
-  keywords: ['driving lessons Orange NSW', 'driving instructor Orange', 'learner driver Orange', 'driving school Orange NSW', 'GZ Driving Services'],
+  description: `Professional driving lessons in Canberra, ACT. Patient, experienced instructor offering learner lessons, licence test prep, refresher lessons and defensive driving. Call ${COMPANY.phone}.`,
+  keywords: ['driving lessons Canberra ACT', 'driving instructor Canberra', 'learner driver Canberra', 'driving school Canberra ACT', 'GZ Driving Services'],
   authors: [{ name: COMPANY.name }],
   creator: COMPANY.name,
   openGraph: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: 'https://gzdrivingservices.com.au',
     siteName: COMPANY.name,
     title: `${COMPANY.name} | ${COMPANY.tagline}`,
-    description: `Professional driving lessons in Orange, NSW. Patient, experienced instructor. Call ${COMPANY.phone}.`,
+    description: `Professional driving lessons in Canberra, ACT. Patient, experienced instructor. Call ${COMPANY.phone}.`,
     images: [
       {
         url: '/og-image.jpg',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: `${COMPANY.name} | ${COMPANY.tagline}`,
-    description: `Professional driving lessons in Orange, NSW. Call ${COMPANY.phone}.`,
+    description: `Professional driving lessons in Canberra, ACT. Call ${COMPANY.phone}.`,
   },
   robots: {
     index: true,

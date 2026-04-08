@@ -7,7 +7,7 @@ import FaqAccordion from '@/components/FaqAccordion';
 
 export const metadata: Metadata = {
   title: 'Pricing & Packages',
-  description: `Transparent driving lesson pricing in Orange, NSW. Casual lessons from $80/hr or save with our 5 or 10-lesson packs. ${COMPANY.name} — ${COMPANY.phone}.`,
+  description: `Transparent driving lesson pricing in Canberra, ACT. Casual lessons from $80/hr or save with our 5 or 10-lesson packs. ${COMPANY.name} — ${COMPANY.phone}.`,
 };
 
 const PRICING_FAQS = [
@@ -21,7 +21,7 @@ const PRICING_FAQS = [
   },
   {
     question: 'Is pick-up and drop-off included?',
-    answer: 'Yes — pick-up and drop-off is included in every lesson price, within the Orange service area. We\'ll come to your home, school, or workplace.',
+    answer: 'Yes — pick-up and drop-off is included in every lesson price, within the Canberra service area. We\'ll come to your home, school, or workplace.',
   },
   {
     question: 'Can I use your car for the driving test?',
@@ -62,7 +62,7 @@ export default function PricingPage() {
             ))}
           </div>
           <p className="text-center text-gray-400 text-sm">
-            All prices include pick-up and drop-off within Orange, NSW. Packages never expire. GST inclusive.
+            All prices include pick-up and drop-off within Canberra, ACT. Packages never expire. GST inclusive.
           </p>
         </div>
       </section>
@@ -74,7 +74,7 @@ export default function PricingPage() {
             {[
               { icon: '🚗', title: 'Pick-up included', desc: 'We come to you — home, school, or work.' },
               { icon: '🛡️', title: 'Dual-control car', desc: 'Mazda 3 with instructor controls for your safety.' },
-              { icon: '📋', title: 'NSW logbook aligned', desc: 'Lessons structured to meet logbook requirements.' },
+              { icon: '📋', title: 'ACT logbook aligned', desc: 'Lessons structured to meet logbook requirements.' },
               { icon: '♾️', title: 'Packs never expire', desc: 'Use your lessons at your own pace, no rush.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-3 items-start">

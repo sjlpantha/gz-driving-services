@@ -4,7 +4,7 @@ import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Book a Driving Lesson',
-  description: `Book a driving lesson with ${COMPANY.name} in Orange, NSW. Fill in the form or call ${COMPANY.phone} to get started.`,
+  description: `Book a driving lesson with ${COMPANY.name} in Canberra, ACT. Fill in the form or call ${COMPANY.phone} to get started.`,
 };
 
 export default function BookPage() {
@@ -76,7 +76,7 @@ export default function BookPage() {
                   <span>📍</span> Service area
                 </h3>
                 <p className="text-gray-500 text-sm mb-4 leading-relaxed">
-                  We service Orange and surrounding suburbs. Pick-up and drop-off is always included.
+                  We service Canberra and surrounding suburbs. Pick-up and drop-off is always included.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {SERVICE_AREAS.map((area) => (

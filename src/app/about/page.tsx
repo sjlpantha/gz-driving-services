@@ -4,7 +4,7 @@ import { COMPANY } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'About Our Instructor',
-  description: `Meet the team behind ${COMPANY.name}. Professional, accredited driving instructor based in Orange, NSW with years of experience helping learners pass their test.`,
+  description: `Meet the team behind ${COMPANY.name}. Professional, accredited driving instructor based in Canberra, ACT with years of experience helping learners pass their test.`,
 };
 
 const VEHICLE_FEATURES = [
@@ -20,7 +20,7 @@ const GZ_DIFFERENCE = [
   {
     icon: '🎯',
     title: 'Goal-focused lessons',
-    desc: 'Every lesson has a clear objective. We track your progress against the NSW logbook requirements so you always know where you stand.',
+    desc: 'Every lesson has a clear objective. We track your progress against the ACT logbook requirements so you always know where you stand.',
   },
   {
     icon: '🤝',
@@ -30,12 +30,12 @@ const GZ_DIFFERENCE = [
   {
     icon: '📍',
     title: 'Local knowledge',
-    desc: 'We know every roundabout, intersection, and tricky merge lane in Orange. You\'ll be coached on exactly what you\'ll face on test day.',
+    desc: 'We know every roundabout, intersection, and tricky merge lane in Canberra. You\'ll be coached on exactly what you\'ll face on test day.',
   },
   {
     icon: '🏆',
     title: 'Track record of success',
-    desc: '97% of our students pass their driving test on the first attempt — well above the NSW state average.',
+    desc: '97% of our students pass their driving test on the first attempt — well above the ACT state average.',
   },
 ];
 
@@ -47,16 +47,15 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-            {/* Instructor photo placeholder */}
+            {/* Instructor photo */}
             <div className="flex justify-center lg:justify-start">
               <div className="relative">
-                <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-red-100 to-red-50 border-4 border-white shadow-2xl flex flex-col items-center justify-center gap-3">
-                  <span className="text-6xl">👤</span>
-                  <p className="text-gray-400 text-sm font-medium text-center px-6">
-                    Instructor photo
-                    <br />
-                    <span className="text-xs text-gray-300">(coming soon)</span>
-                  </p>
+                <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full border-4 border-white shadow-2xl overflow-hidden bg-gradient-to-br from-red-100 to-red-50">
+                  <img
+                    src="/instructor.jpg"
+                    alt="Prabin Maharjan — GZ Driving Services"
+                    className="w-full h-full object-cover object-center"
+                  />
                 </div>
                 {/* Badge */}
                 <div className="absolute -bottom-3 -right-3 w-20 h-20 bg-[#B91C1C] rounded-full flex flex-col items-center justify-center text-white shadow-lg">
@@ -71,13 +70,13 @@ export default function AboutPage() {
               <div>
                 <span className="text-[#A07730] text-sm font-semibold uppercase tracking-wider">Meet your instructor</span>
                 <h1 className="mt-2 text-3xl lg:text-4xl font-black text-[#1a1a1a] tracking-tight">
-                  Your name here
+                  Prabin Maharjan
                 </h1>
-                <p className="text-gray-500 text-sm mt-1">Accredited Driving Instructor · Orange, NSW</p>
+                <p className="text-gray-500 text-sm mt-1">Accredited Driving Instructor · Canberra, ACT</p>
               </div>
 
               <p className="text-gray-500 leading-relaxed">
-                With over 5 years of professional driving instruction experience in Orange and the surrounding Central West, I&apos;ve helped hundreds of learners go from nervous first-timers to confident, safe drivers.
+                With over 5 years of professional driving instruction experience in Canberra and the surrounding ACT region, I&apos;ve helped hundreds of learners go from nervous first-timers to confident, safe drivers.
               </p>
               <p className="text-gray-500 leading-relaxed">
                 My approach is simple: calm, patient, and structured. I believe every student learns differently, and I adapt each lesson to meet you exactly where you are — never pushing faster than you&apos;re ready to go.
@@ -86,11 +85,11 @@ export default function AboutPage() {
               {/* Credentials */}
               <div className="flex flex-col gap-2.5">
                 {[
-                  'NSW Government Accredited Driving Instructor',
+                  'ACT Government Accredited Driving Instructor',
                   'First Aid Certified',
                   '5+ years professional instruction experience',
                   '500+ lessons delivered',
-                  'Local to Orange, NSW — knows every test route',
+                  'Local to Canberra, ACT — knows every test route',
                 ].map((cred) => (
                   <div key={cred} className="flex items-center gap-2.5 text-sm text-[#1a1a1a]">
                     <span className="w-5 h-5 rounded-full bg-red-50 flex items-center justify-center text-[#B91C1C] text-xs font-bold flex-shrink-0">✓</span>

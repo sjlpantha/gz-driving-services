@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const PLACEHOLDER_TESTIMONIALS = [
   {
     name: "Sarah M.",
-    suburb: "Orange",
+    suburb: "Belconnen",
     text: "Incredibly patient instructor. I was so nervous before my first lesson but felt completely at ease by the end. Passed first attempt!",
     stars: 5,
     initials: "SM",
