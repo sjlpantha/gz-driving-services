@@ -52,7 +52,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full border-4 border-white shadow-2xl overflow-hidden bg-gradient-to-br from-red-100 to-red-50">
                   <img
-                    src="/instructor.jpg"
+                    src="/instructor.jpeg"
                     alt="Prabin Maharjan — GZ Driving Services"
                     className="w-full h-full object-cover object-center"
                   />

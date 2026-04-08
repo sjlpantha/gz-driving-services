@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SERVICES, COMPANY } from '@/lib/constants';
+import ServiceImage from '@/components/ServiceImage';
 
 export const metadata: Metadata = {
   title: 'Driving Lesson Services',
@@ -81,28 +82,14 @@ export default function ServicesPage() {
                   </Link>
                 </div>
 
-                {/* Visual card — image */}
-                <div
-                  className={`rounded-[14px] overflow-hidden min-h-[300px] lg:min-h-[360px] relative bg-gradient-to-br from-red-50 to-red-100 ${
-                    i % 2 === 1 ? 'lg:col-start-1' : ''
-                  }`}
-                >
-                  <img
-                    src={`/services/${service.id}.jpg`}
-                    alt={service.title}
-                    className="w-full h-full object-cover absolute inset-0"
-                  />
-                  {/* Overlay label */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xl">{service.icon}</span>
-                      <span className="text-white font-bold text-lg">{service.title}</span>
-                    </div>
-                    <div className="mt-1 px-3 py-0.5 inline-block rounded-full bg-[#B91C1C] text-white text-xs font-medium">
-                      {service.duration}
-                    </div>
-                  </div>
-                </div>
+                {/* Visual card — image with fallback */}
+                <ServiceImage
+                  id={service.id}
+                  title={service.title}
+                  icon={service.icon}
+                  duration={service.duration}
+                  flipped={i % 2 === 1}
+                />
               </div>
             ))}
           </div>
